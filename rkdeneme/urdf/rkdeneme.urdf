@@ -1,0 +1,691 @@
+<?xml version="1.0" encoding="utf-8"?>
+<!-- This URDF was automatically created by SolidWorks to URDF Exporter! Originally created by Stephen Brawner (brawner@gmail.com) 
+     Commit Version: 1.6.0-1-g15f4949  Build Version: 1.6.7594.29634
+     For more information, please see http://wiki.ros.org/sw_urdf_exporter -->
+<robot
+  name="rkdeneme">
+
+<!-- This dummy joint is used with the manipulators which are attached to a fixed point -->
+<link name="world">
+  </link>
+  <joint 
+    name="dummy_joint" 
+    type="fixed" >
+    <origin
+      xyz="0 0 0"
+      rpy="0 0 0" />
+    <parent
+      link="world" />
+    <child
+      link="base_link" />
+  </joint>
+
+
+
+  <link
+    name="base_link">
+    <inertial>
+      <origin
+        xyz="-0.0499999999999999 0.0380450000000001 0.0025"
+        rpy="0 0 0" />
+      <mass
+        value="0.038045" />
+      <inertia
+        ixx="1.84349840637034E-05"
+        ixy="1.27013013861485E-19"
+        ixz="1.61029402544638E-22"
+        iyy="3.17834270833332E-05"
+        iyz="-1.11252483665931E-22"
+        izz="5.00598903137033E-05" />
+    </inertial>
+    <visual>
+      <origin
+        xyz="0 0 0"
+        rpy="0 0 0" />
+      <geometry>
+        <mesh
+          filename="package://rkdeneme/meshes/base_link.STL" />
+      </geometry>
+      <material
+        name="">
+        <color
+          rgba="0.792156862745098 0.819607843137255 0.933333333333333 1" />
+      </material>
+    </visual>
+    <collision>
+      <origin
+        xyz="0 0 0"
+        rpy="0 0 0" />
+      <geometry>
+        <mesh
+          filename="package://rkdeneme/meshes/base_link.STL" />
+      </geometry>
+    </collision>
+  </link>
+  <link
+    name="link_1">
+    <inertial>
+      <origin
+        xyz="0.0474872847406768 0.0235575229479421 0.0143056749251272"
+        rpy="0 0 0" />
+      <mass
+        value="0.892708427147432" />
+      <inertia
+        ixx="0.002475985313981"
+        ixy="0.000457343853060466"
+        ixz="5.2511712285032E-05"
+        iyy="0.00127219657031323"
+        iyz="-0.0002761162565724"
+        izz="0.00294023830383873" />
+    </inertial>
+    <visual>
+      <origin
+        xyz="0 0 0"
+        rpy="0 0 0" />
+      <geometry>
+        <mesh
+          filename="package://rkdeneme/meshes/link_1.STL" />
+      </geometry>
+      <material
+        name="">
+        <color
+          rgba="0.792156862745098 0.819607843137255 0.933333333333333 1" />
+      </material>
+    </visual>
+    <collision>
+      <origin
+        xyz="0 0 0"
+        rpy="0 0 0" />
+      <geometry>
+        <mesh
+          filename="package://rkdeneme/meshes/link_1.STL" />
+      </geometry>
+    </collision>
+  </link>
+  <joint
+    name="joint_1"
+    type="fixed">
+    <origin
+      xyz="-0.100999593383655 0.0389999999999999 0.035"
+      rpy="0 0 0" />
+    <parent
+      link="base_link" />
+    <child
+      link="link_1" />
+    <axis
+      xyz="0 0 0" />
+    <limit
+      lower="0"
+      upper="0"
+      effort="0"
+      velocity="0"/>
+  </joint>
+  <link
+    name="link_2">
+    <inertial>
+      <origin
+        xyz="0.0306874425068561 0.00294524429004629 0.0577630240111384"
+        rpy="0 0 0" />
+      <mass
+        value="0.706717646724978" />
+      <inertia
+        ixx="0.000830273904630186"
+        ixy="-3.48651856918341E-05"
+        ixz="0.000449009515128558"
+        iyy="0.00249544726205211"
+        iyz="8.26157395931233E-07"
+        izz="0.00194089524730739" />
+    </inertial>
+    <visual>
+      <origin
+        xyz="0 0 0"
+        rpy="0 0 0" />
+      <geometry>
+        <mesh
+          filename="package://rkdeneme/meshes/link_2.STL" />
+      </geometry>
+      <material
+        name="">
+        <color
+          rgba="0.792156862745098 0.819607843137255 0.933333333333333 1" />
+      </material>
+    </visual>
+    <collision>
+      <origin
+        xyz="0 0 0"
+        rpy="0 0 0" />
+      <geometry>
+        <mesh
+          filename="package://rkdeneme/meshes/link_2.STL" />
+      </geometry>
+    </collision>
+  </link>
+  <joint
+    name="joint_2"
+    type="revolute">
+    <origin
+      xyz="0.079 0 0.0419999999999996"
+      rpy="0 0 3.12345472637197" />
+    <parent
+      link="link_1" />
+    <child
+      link="link_2" />
+    <axis
+      xyz="0 0 1" />
+    <limit
+      lower="-3.14"
+      upper="3.14"
+      effort="200"
+      velocity="20"/>
+  </joint>
+  <link
+    name="link_3">
+    <inertial>
+      <origin
+        xyz="0.0364314927788938 -0.0395728049052746 0.274956127801036"
+        rpy="0 0 0" />
+      <mass
+        value="0.857612897125528" />
+      <inertia
+        ixx="0.00235298914404001"
+        ixy="-0.000221281181505715"
+        ixz="-0.000381896634805383"
+        iyy="0.00270696667909465"
+        iyz="-0.000144962336324164"
+        izz="0.00100324235969399" />
+    </inertial>
+    <visual>
+      <origin
+        xyz="0 0 0"
+        rpy="0 0 0" />
+      <geometry>
+        <mesh
+          filename="package://rkdeneme/meshes/link_3.STL" />
+      </geometry>
+      <material
+        name="">
+        <color
+          rgba="0.792156862745098 0.819607843137255 0.933333333333333 1" />
+      </material>
+    </visual>
+    <collision>
+      <origin
+        xyz="0 0 0"
+        rpy="0 0 0" />
+      <geometry>
+        <mesh
+          filename="package://rkdeneme/meshes/link_3.STL" />
+      </geometry>
+    </collision>
+  </link>
+  <joint
+    name="joint_3"
+    type="revolute">
+    <origin
+      xyz="0.00070000000000002 0.0276520837518357 0.092000406616345"
+      rpy="0.0315369683570161 -0.0788800661010763 2.76077877392938" />
+    <parent
+      link="link_2" />
+    <child
+      link="link_3" />
+    <axis
+      xyz="0.370520470555236 -0.92882430033862 0" />
+    <limit
+      lower="-3.14"
+      upper="3.14"
+      effort="200"
+      velocity="20"/>
+  </joint>
+  <link
+    name="link_4">
+    <inertial>
+      <origin
+        xyz="0.00398113959010205 -0.0249285275788731 -0.245131235086911"
+        rpy="0 0 0" />
+      <mass
+        value="0.558171660320752" />
+      <inertia
+        ixx="0.00184421074201008"
+        ixy="1.70205388519674E-05"
+        ixz="2.00611490077262E-05"
+        iyy="0.00183143013583141"
+        iyz="5.28369925538232E-05"
+        izz="0.000350951715511441" />
+    </inertial>
+    <visual>
+      <origin
+        xyz="0 0 0"
+        rpy="0 0 0" />
+      <geometry>
+        <mesh
+          filename="package://rkdeneme/meshes/link_4.STL" />
+      </geometry>
+      <material
+        name="">
+        <color
+          rgba="0.792156862745098 0.819607843137255 0.933333333333333 1" />
+      </material>
+    </visual>
+    <collision>
+      <origin
+        xyz="0 0 0"
+        rpy="0 0 0" />
+      <geometry>
+        <mesh
+          filename="package://rkdeneme/meshes/link_4.STL" />
+      </geometry>
+    </collision>
+  </link>
+  <joint
+    name="joint_4"
+    type="revolute">
+    <origin
+      xyz="0.0484527745766341 0.0194104117467899 0.348696170399897"
+      rpy="-3.14159265358956 1.55982332251752 0.381027606369495" />
+    <parent
+      link="link_3" />
+    <child
+      link="link_4" />
+    <axis
+      xyz="0 1 0" />
+    <limit
+      lower="-3.14"
+      upper="3.14"
+      effort="200"
+      velocity="20"/>
+  </joint>
+  <link
+    name="link_5">
+    <inertial>
+      <origin
+        xyz="0.0505507863386959 -0.0484264453687657 0.0619152303913047"
+        rpy="0 0 0" />
+      <mass
+        value="0.394030656356264" />
+      <inertia
+        ixx="0.000208112630448649"
+        ixy="-7.79909983976751E-05"
+        ixz="3.58694692726464E-05"
+        iyy="0.00124765841844533"
+        iyz="-6.8623835693657E-06"
+        izz="0.00128723148220654" />
+    </inertial>
+    <visual>
+      <origin
+        xyz="0 0 0"
+        rpy="0 0 0" />
+      <geometry>
+        <mesh
+          filename="package://rkdeneme/meshes/link_5.STL" />
+      </geometry>
+      <material
+        name="">
+        <color
+          rgba="0.792156862745098 0.819607843137255 0.933333333333333 1" />
+      </material>
+    </visual>
+    <collision>
+      <origin
+        xyz="0 0 0"
+        rpy="0 0 0" />
+      <geometry>
+        <mesh
+          filename="package://rkdeneme/meshes/link_5.STL" />
+      </geometry>
+    </collision>
+  </link>
+  <joint
+    name="joint_5"
+    type="revolute">
+    <origin
+      xyz="0.0420369065424729 0.00398838875285276 -0.3685"
+      rpy="3.14159265358976 -1.40587663943545 -1.46495180953747" />
+    <parent
+      link="link_4" />
+    <child
+      link="link_5" />
+    <axis
+      xyz="0 1 0" />
+    <limit
+      lower="-3.14"
+      upper="3.14"
+      effort="200"
+      velocity="20"/>
+  </joint>
+  <link
+    name="link_6">
+    <inertial>
+      <origin
+        xyz="0.0241945311920965 -0.0595889965707277 0.0151866853021563"
+        rpy="0 0 0" />
+      <mass
+        value="0.332748432876594" />
+      <inertia
+        ixx="0.00122583145081026"
+        ixy="7.98432474698867E-05"
+        ixz="-8.8055141153864E-06"
+        iyy="0.000184665148411829"
+        iyz="-2.87293763528741E-05"
+        izz="0.00126959049387581" />
+    </inertial>
+    <visual>
+      <origin
+        xyz="0 0 0"
+        rpy="0 0 0" />
+      <geometry>
+        <mesh
+          filename="package://rkdeneme/meshes/link_6.STL" />
+      </geometry>
+      <material
+        name="">
+        <color
+          rgba="0.792156862745098 0.819607843137255 0.933333333333333 1" />
+      </material>
+    </visual>
+    <collision>
+      <origin
+        xyz="0 0 0"
+        rpy="0 0 0" />
+      <geometry>
+        <mesh
+          filename="package://rkdeneme/meshes/link_6.STL" />
+      </geometry>
+    </collision>
+  </link>
+  <joint
+    name="joint_6"
+    type="revolute">
+    <origin
+      xyz="-0.0379700119679344 -0.0709236621485423 0.163500000000019"
+      rpy="3.10186199651076 1.5707963267949 0" />
+    <parent
+      link="link_5" />
+    <child
+      link="link_6" />
+    <axis
+      xyz="0.999977391572284 0.0010172102901967 0.00664692617054545" />
+    <limit
+      lower="-3.14"
+      upper="3.14"
+      effort="200"
+      velocity="20"/>
+  </joint>
+  <link
+    name="link_7">
+    <inertial>
+      <origin
+        xyz="0.000727472717339028 0.00354211596177539 0.0653850779268292"
+        rpy="0 0 0" />
+      <mass
+        value="0.178129274111857" />
+      <inertia
+        ixx="0.000338925862506268"
+        ixy="6.47280524761131E-08"
+        ixz="2.65390539492845E-07"
+        iyy="0.000277438194361529"
+        iyz="-1.06778735336586E-06"
+        izz="0.000110830834649095" />
+    </inertial>
+    <visual>
+      <origin
+        xyz="0 0 0"
+        rpy="0 0 0" />
+      <geometry>
+        <mesh
+          filename="package://rkdeneme/meshes/link_7.STL" />
+      </geometry>
+      <material
+        name="">
+        <color
+          rgba="0.792156862745098 0.819607843137255 0.933333333333333 1" />
+      </material>
+    </visual>
+    <collision>
+      <origin
+        xyz="0 0 0"
+        rpy="0 0 0" />
+      <geometry>
+        <mesh
+          filename="package://rkdeneme/meshes/link_7.STL" />
+      </geometry>
+    </collision>
+  </link>
+  <joint
+    name="joint_7"
+    type="revolute">
+    <origin
+      xyz="0 0 0.0327056138567764"
+      rpy="0 0 1.94122221355038" />
+    <parent
+      link="link_6" />
+    <child
+      link="link_7" />
+    <axis
+      xyz="0 0 1" />
+    <limit
+      lower="-3.14"
+      upper="3.14"
+      effort="200"
+      velocity="20"/>
+  </joint>
+  <link
+    name="gripper_right_link">
+    <inertial>
+      <origin
+        xyz="0.021812670080032 0.0780665544139116 -0.00047250990388914"
+        rpy="0 0 0" />
+      <mass
+        value="0.090636446090277" />
+      <inertia
+        ixx="0.000181842022510951"
+        ixy="7.23164254795497E-06"
+        ixz="1.47127414897989E-07"
+        iyy="1.2175093024132E-05"
+        iyz="1.6352173740677E-06"
+        izz="0.000187667490035478" />
+    </inertial>
+    <visual>
+      <origin
+        xyz="0 0 0"
+        rpy="0 0 0" />
+      <geometry>
+        <mesh
+          filename="package://rkdeneme/meshes/gripper_right_link.STL" />
+      </geometry>
+      <material
+        name="">
+        <color
+          rgba="0.792156862745098 0.819607843137255 0.933333333333333 1" />
+      </material>
+    </visual>
+    <collision>
+      <origin
+        xyz="0 0 0"
+        rpy="0 0 0" />
+      <geometry>
+        <mesh
+          filename="package://rkdeneme/meshes/gripper_right_link.STL" />
+      </geometry>
+    </collision>
+  </link>
+  <joint
+    name="gripper_right_joint"
+    type="revolute">
+    <origin
+      xyz="0.00020482172354952 0.0038437705383681 0.112525889750691"
+      rpy="1.5689414613659 -0.00641028568971245 -1.56977118260045" />
+    <parent
+      link="link_7" />
+    <child
+      link="gripper_right_link" />
+    <axis
+      xyz="0 0 -1" />
+    <limit
+      lower="0"
+      upper="0.45"
+      effort="200"
+      velocity="20" />
+  </joint>
+  <link
+    name="gripper_left_link">
+    <inertial>
+      <origin
+        xyz="0.021812666088715 0.0780665362185319 -0.001065283190336"
+        rpy="0 0 0" />
+      <mass
+        value="0.0906365017830261" />
+      <inertia
+        ixx="0.000181842075679543"
+        ixy="7.23163176080515E-06"
+        ixz="1.47129764392357E-07"
+        iyy="1.21750981860815E-05"
+        iyz="1.63522887738205E-06"
+        izz="0.000187667542622946" />
+    </inertial>
+    <visual>
+      <origin
+        xyz="0 0 0"
+        rpy="0 0 0" />
+      <geometry>
+        <mesh
+          filename="package://rkdeneme/meshes/gripper_left_link.STL" />
+      </geometry>
+      <material
+        name="">
+        <color
+          rgba="0.792156862745098 0.819607843137255 0.933333333333333 1" />
+      </material>
+    </visual>
+    <collision>
+      <origin
+        xyz="0 0 0"
+        rpy="0 0 0" />
+      <geometry>
+        <mesh
+          filename="package://rkdeneme/meshes/gripper_left_link.STL" />
+      </geometry>
+    </collision>
+  </link>
+  <joint
+    name="gripper_left_joint"
+    type="revolute">
+    <origin
+      xyz="0.00020482172354952 0.0038437705383681 0.112525889750691"
+      rpy="1.57265119222389 0.00641028568971246 1.57182147098935" />
+    <parent
+      link="link_7" />
+    <child
+      link="gripper_left_link" />
+    <axis
+      xyz="0 0 -1" />
+    <limit
+      lower="0"
+      upper="0.45"
+      effort="200"
+      velocity="20" />
+  </joint>
+
+
+<!-- gazebo plugin -->
+
+<gazebo>
+ <plugin name="gazebo_ros_control" filename="libgazebo_ros_control.so">
+  <robotSimType>gazebo_ros_control/DefaultRobotHWSim</robotSimType>
+  <legacyModeNS>true</legacyModeNS> 
+  <controlPeriod>0.001</controlPeriod>
+  <robotNamespace></robotNamespace>
+    </plugin>
+</gazebo>
+
+
+<!-- transmissions -->
+
+<transmission name="tran2">
+    <type>transmission_interface/SimpleTransmission</type>
+    <joint name="joint_2">
+      <hardwareInterface>hardware_interface/PositionJointInterface</hardwareInterface>
+    </joint>
+    <actuator name="motor2">
+      <hardwareInterface>hardware_interface/PositionJointInterface</hardwareInterface>
+      <mechanicalReduction>1</mechanicalReduction>
+    </actuator>
+</transmission>
+
+<transmission name="tran3">
+    <type>transmission_interface/SimpleTransmission</type>
+    <joint name="joint_3">
+      <hardwareInterface>hardware_interface/PositionJointInterface</hardwareInterface>
+    </joint>
+    <actuator name="motor3">
+      <hardwareInterface>hardware_interface/PositionJointInterface</hardwareInterface>
+      <mechanicalReduction>1</mechanicalReduction>
+    </actuator>
+</transmission>
+
+<transmission name="tran4">
+    <type>transmission_interface/SimpleTransmission</type>
+    <joint name="joint_4">
+      <hardwareInterface>hardware_interface/PositionJointInterface</hardwareInterface>
+    </joint>
+    <actuator name="motor4">
+      <hardwareInterface>hardware_interface/PositionJointInterface</hardwareInterface>
+      <mechanicalReduction>1</mechanicalReduction>
+    </actuator>
+</transmission>
+
+<transmission name="tran5">
+    <type>transmission_interface/SimpleTransmission</type>
+    <joint name="joint_5">
+      <hardwareInterface>hardware_interface/PositionJointInterface</hardwareInterface>
+    </joint>
+    <actuator name="motor5">
+      <hardwareInterface>hardware_interface/PositionJointInterface</hardwareInterface>
+      <mechanicalReduction>1</mechanicalReduction>
+    </actuator>
+</transmission>
+
+<transmission name="tran6">
+    <type>transmission_interface/SimpleTransmission</type>
+    <joint name="joint_6">
+      <hardwareInterface>hardware_interface/PositionJointInterface</hardwareInterface>
+    </joint>
+    <actuator name="motor6">
+      <hardwareInterface>hardware_interface/PositionJointInterface</hardwareInterface>
+      <mechanicalReduction>1</mechanicalReduction>
+    </actuator>
+</transmission>
+
+<transmission name="tran7">
+    <type>transmission_interface/SimpleTransmission</type>
+    <joint name="joint_7">
+      <hardwareInterface>hardware_interface/PositionJointInterface</hardwareInterface>
+    </joint>
+    <actuator name="motor7">
+      <hardwareInterface>hardware_interface/PositionJointInterface</hardwareInterface>
+      <mechanicalReduction>1</mechanicalReduction>
+    </actuator>
+</transmission>
+
+<transmission name="tran_gripper_right">
+    <type>transmission_interface/SimpleTransmission</type>
+    <joint name="gripper_right_joint">
+      <hardwareInterface>hardware_interface/PositionJointInterface</hardwareInterface>
+    </joint>
+    <actuator name="motor_gripper_right">
+      <hardwareInterface>hardware_interface/PositionJointInterface</hardwareInterface>
+      <mechanicalReduction>1</mechanicalReduction>
+    </actuator>
+</transmission>
+
+<transmission name="tran_gripper_left">
+    <type>transmission_interface/SimpleTransmission</type>
+    <joint name="gripper_left_joint">
+      <hardwareInterface>hardware_interface/PositionJointInterface</hardwareInterface>
+    </joint>
+    <actuator name="motor_gripper_left">
+      <hardwareInterface>hardware_interface/PositionJointInterface</hardwareInterface>
+      <mechanicalReduction>1</mechanicalReduction>
+    </actuator>
+</transmission>
+
+</robot>
